@@ -1478,9 +1478,14 @@
     // TELEGRAM УВЕДОМЛЕНИЯ ДЛЯ ИНЖЕНЕРА / АДМИНА
     // Вставьте сюда токен бота от @BotFather и chat_id (от @userinfobot или группы)
     // =========================================================================
-    const TELEGRAM_CONFIG = {
-      botToken: '9052325450:AAG8NkcC5N3Atsq8RyUyiyt8N3kv-yv785A',
-      chatId: '803336154',
+    // =========================================================================
+    // ОТПРАВКА ЗАЯВОК НА ПОЧТУ СОТРУДНИКА (ЧЕРЕЗ WEB3FORMS / FORMSUBMIT)
+    // Укажите почту сотрудника в EMPLOYEE_EMAIL_CONFIG.toEmail
+    // (при необходимости вставьте Access Key с web3forms.com в web3formsAccessKey)
+    // =========================================================================
+    const EMPLOYEE_EMAIL_CONFIG = {
+      toEmail: 'daniilkosak71@gmail.com',
+      web3formsAccessKey: '',
     };
 
     function escapeTgHtml(str) {
@@ -1490,17 +1495,69 @@
         .replace(/>/g, '&gt;');
     }
 
-async function sendToTelegram(htmlMessage) {
-  try {
-    await fetch('https://it180-orders.daniilkosak71.workers.dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ html: htmlMessage }),
-    });
-  } catch (err) {
-    console.error('Ошибка отправки уведомления:', err);
-  }
-}
+    function htmlToPlainOrderText(htmlMessage) {
+      return String(htmlMessage || '')
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/(p|div|li|tr|h[1-6])>/gi, '\n')
+        .replace(/<[^>]+>/g, '')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&nbsp;/g, ' ')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+    }
+
+    async function sendToTelegram(htmlMessage) {
+      const plainText = htmlToPlainOrderText(htmlMessage);
+      if (!plainText) return;
+
+      const toEmail = (EMPLOYEE_EMAIL_CONFIG.toEmail || '').trim();
+      const accessKey = (EMPLOYEE_EMAIL_CONFIG.web3formsAccessKey || '').trim();
+
+      if (!toEmail || toEmail.includes('ВСТАВЬТЕ_')) {
+        console.warn('Не указана почта сотрудника в EMPLOYEE_EMAIL_CONFIG.toEmail');
+        return;
+      }
+
+      try {
+        if (accessKey) {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              access_key: accessKey,
+              subject: 'Новая заявка с сайта АйТи Сервис (it180.ru)',
+              from_name: 'Сайт it180.ru',
+              replyto: toEmail,
+              message: plainText,
+            }),
+          });
+          if (!res.ok) {
+            console.error('Ошибка отправки письма через Web3Forms:', res.status);
+          }
+          return;
+        }
+
+        const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(toEmail)}`;
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: 'Новая заявка с сайта АйТи Сервис (it180.ru)',
+            _template: 'box',
+            заявка: plainText,
+          }),
+        });
+        if (!res.ok) {
+          console.error('Ошибка отправки письма на почту:', res.status);
+        }
+      } catch (err) {
+        console.error('Ошибка отправки уведомления на почту:', err);
+      }
+    }
 
     // =========================================================================
     // 0. EMBEDDED PHOTOS STORE (POPULATED AUTOMATICALLY ON HTML EXPORT)
