@@ -1490,27 +1490,17 @@
         .replace(/>/g, '&gt;');
     }
 
-    async function sendToTelegram(htmlMessage) {
-      const token = (TELEGRAM_CONFIG.botToken || '').trim();
-      const chatId = (TELEGRAM_CONFIG.chatId || '').trim();
-      if (!token || !chatId || token.includes('ВСТАВЬТЕ_') || chatId.includes('ВСТАВЬТЕ_')) {
-        return;
-      }
-      try {
-        await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: htmlMessage,
-            parse_mode: 'HTML',
-            disable_web_page_preview: true,
-          }),
-        });
-      } catch (err) {
-        console.error('Ошибка отправки уведомления в Telegram:', err);
-      }
-    }
+async function sendToTelegram(htmlMessage) {
+  try {
+    await fetch('https://it180-orders.daniilkosak71.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ html: htmlMessage }),
+    });
+  } catch (err) {
+    console.error('Ошибка отправки уведомления:', err);
+  }
+}
 
     // =========================================================================
     // 0. EMBEDDED PHOTOS STORE (POPULATED AUTOMATICALLY ON HTML EXPORT)
