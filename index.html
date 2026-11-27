@@ -861,13 +861,7 @@
               </span>
               <span class="font-mono font-semibold text-carbon shrink-0">+4 250 ₽</span>
             </label>
-            <label class="flex items-center justify-between gap-3 p-3.5 rounded-md bg-surface border border-hairline cursor-pointer text-sm">
-              <span class="flex items-center gap-2.5">
-                <input type="checkbox" onchange="setBundleOpt('retail','fns',this.checked)" class="w-4 h-4 accent-brand rounded shrink-0">
-                <span class="font-medium text-carbon">Регистрация ККТ в ФНС + подключение ОФД</span>
-              </span>
-              <span class="font-mono font-semibold text-carbon shrink-0">+3 500 ₽</span>
-            </label>
+
           </div>
         
           </div>
@@ -913,7 +907,7 @@
           </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div class="bg-surface border border-hairline rounded-lg p-6 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
@@ -934,30 +928,14 @@
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="font-mono text-sm font-bold text-brand">02</span>
-                <span class="font-mono text-[11px] uppercase px-2 py-0.5 bg-canvas border border-hairline rounded text-graphite">1С:Розница / УТ</span>
+                <span class="font-mono text-[11px] uppercase px-2 py-0.5 bg-canvas border border-hairline rounded text-brand font-semibold">7 000 ₽</span>
               </div>
-              <h3 class="text-[17px] font-bold text-carbon mb-2">Внедрение и настройка 1С</h3>
+              <h3 class="text-[17px] font-bold text-carbon mb-2">Регистрация в ФНС</h3>
               <p class="text-sm text-graphite leading-relaxed mb-4">
-                Установка, подписка и настройка 1С:Розница, 1С:Управление торговлей на ПК. Интеграция с онлайн-кассами, загрузка номенклатуры и учёт остатков.
+                Фискализация и постановка ККТ на учёт в налоговой (7 000 ₽), подключение ОФД, замена ФН и настройка маркировки «Честный ЗНАК».
               </p>
             </div>
-            <button type="button" onclick="openCallbackModal('Внедрение и настройка 1С')" class="text-left text-sm font-semibold text-carbon hover:text-brand transition-colors pt-3 border-t border-hairline">
-              Заказать внедрение 1С →
-            </button>
-          </div>
-
-          <div class="bg-surface border border-hairline rounded-lg p-6 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="font-mono text-sm font-bold text-brand">03</span>
-                <span class="font-mono text-[11px] uppercase px-2 py-0.5 bg-canvas border border-hairline rounded text-graphite">54-ФЗ · ФФД 1.2</span>
-              </div>
-              <h3 class="text-[17px] font-bold text-carbon mb-2">Регистрация ФНС, ОФД, ЗНАК</h3>
-              <p class="text-sm text-graphite leading-relaxed mb-4">
-                Фискализация и постановка ККТ на учёт в налоговой, подключение Контур.ОФД, замена ФН, настройка маркировки «Честный ЗНАК».
-              </p>
-            </div>
-            <button type="button" onclick="openCallbackModal('Регистрация ККТ в ФНС и ОФД')" class="text-left text-sm font-semibold text-carbon hover:text-brand transition-colors pt-3 border-t border-hairline">
+            <button type="button" onclick="openCallbackModal('Регистрация ККТ в ФНС (7 000 ₽)')" class="text-left text-sm font-semibold text-carbon hover:text-brand transition-colors pt-3 border-t border-hairline">
               Зарегистрировать ККТ →
             </button>
           </div>
@@ -965,16 +943,16 @@
           <div class="bg-surface border border-hairline rounded-lg p-6 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="font-mono text-sm font-bold text-brand">04</span>
+                <span class="font-mono text-sm font-bold text-brand">03</span>
                 <span class="font-mono text-[11px] uppercase px-2 py-0.5 bg-canvas border border-hairline rounded text-graphite">Сервис</span>
               </div>
-              <h3 class="text-[17px] font-bold text-carbon mb-2">Сервисное сопровождение</h3>
+              <h3 class="text-[17px] font-bold text-carbon mb-2">Обслуживание и настройка</h3>
               <p class="text-sm text-graphite leading-relaxed mb-4">
-                Обучаем кассиров и товароведов, обновляем прошивки, выполняем гарантийное и постгарантийное обслуживание по стандартам вендоров.
+                В обслуживание входит полная настройка оборудования, обучение кассиров, обновление прошивок, гарантийное и постгарантийное сопровождение.
               </p>
             </div>
-            <button type="button" onclick="openCallbackModal('Сервисное сопровождение')" class="text-left text-sm font-semibold text-carbon hover:text-brand transition-colors pt-3 border-t border-hairline">
-              Подключить поддержку →
+            <button type="button" onclick="openCallbackModal('Обслуживание и настройка оборудования')" class="text-left text-sm font-semibold text-carbon hover:text-brand transition-colors pt-3 border-t border-hairline">
+              Подключить обслуживание →
             </button>
           </div>
         </div>
@@ -1400,13 +1378,7 @@
                   <span class="font-mono font-semibold text-carbon shrink-0">+20 500 ₽</span>
                 </label>
 
-                <label class="flex items-center justify-between gap-3 p-3.5 rounded-md border border-hairline hover:border-carbon cursor-pointer text-sm transition-colors">
-                  <span class="flex items-center gap-2.5">
-                    <input type="checkbox" id="addonFns" onchange="recalcModalPrice()" class="w-4 h-4 accent-brand rounded shrink-0">
-                    <span class="text-carbon">Регистрация ККТ в ФНС + ОФД</span>
-                  </span>
-                  <span class="font-mono font-semibold text-carbon shrink-0">+3 500 ₽</span>
-                </label>
+
               </div>
 
               <!-- Specs Table -->
@@ -1485,30 +1457,7 @@
             </div>
           </div>
 
-        <!-- Additional Services Checkboxes -->
-        <div id="cartSetupBlock" class="hidden pt-4 border-t border-hairline space-y-2.5">
-          <label class="flex items-start justify-between gap-3 p-3.5 rounded-md bg-canvas border border-hairline hover:border-carbon cursor-pointer transition-colors">
-            <span class="flex items-start gap-2.5">
-              <input type="checkbox" id="cartSetupToggle" onchange="renderCart()" class="w-4 h-4 mt-1 accent-brand rounded shrink-0">
-              <span class="text-sm">
-                <span class="block font-semibold text-carbon">Регистрация ККТ в ФНС + ОФД</span>
-                <span class="block text-xs text-graphite mt-0.5">Фискализация, постановка на учёт и проверка чеков</span>
-              </span>
-            </span>
-            <span class="font-mono text-sm font-semibold text-carbon shrink-0">+3 500 ₽</span>
-          </label>
-
-          <label class="flex items-start justify-between gap-3 p-3.5 rounded-md bg-canvas border border-hairline hover:border-carbon cursor-pointer transition-colors">
-            <span class="flex items-start gap-2.5">
-              <input type="checkbox" id="cart1cToggle" onchange="renderCart()" class="w-4 h-4 mt-1 accent-brand rounded shrink-0">
-              <span class="text-sm">
-                <span class="block font-semibold text-carbon">Установка и настройка 1С:Розница</span>
-                <span class="block text-xs text-graphite mt-0.5">Интеграция с кассой, учёт товаров и остатков на ПК</span>
-              </span>
-            </span>
-            <span class="font-mono text-xs font-semibold text-graphite shrink-0">По тарифу</span>
-          </label>
-        </div>
+<div id="cartSetupBlock" class="hidden"></div>
 
         <!-- Copy for VK / Messenger + Checkout Form -->
         <div id="cartActionsBlock" class="hidden space-y-4 pt-4 border-t border-hairline">
@@ -1713,7 +1662,7 @@
     // =========================================================================
     // 1. EXACT 18-ITEM NOMENCLATURE (ACTUAL PRICES & EXACT IDS)
     // =========================================================================
-    const FNS_SETUP_PRICE = 3500;
+    const FNS_SETUP_PRICE = 7000;
     const SUBSCRIPTION_1C_ITEM = {
       id: 'sub-1c-roznitsa',
       sku: '1C-ROZN-PC',
@@ -2449,9 +2398,9 @@
       customPhotos: {},
       bundlesConfig: {
         retail: { fn: 'fn-15', scanner: true, fns: false },
-        coffee: { fn: 'fn-36', sub1c: true, fns: true },
+        coffee: { fn: 'fn-36', sub1c: false, fns: false },
         marking: { display: true, fns: false },
-        warehouse: { tsd: 'idata-k3s', sub1c: true },
+        warehouse: { tsd: 'idata-k3s', sub1c: false },
       },
       cart: [],
     };
@@ -2967,7 +2916,7 @@
         },
         coffee: {
           title: 'Кофейня / Услуги',
-          desc: 'Компактный смарт-терминал АТОЛ Sigma 7 (26 000 ₽), фискальный накопитель и подписка «1С:Розница» на ПК для управления торговлей, учёта и остатков.',
+          desc: 'Компактный смарт-терминал АТОЛ Sigma 7 (26 000 ₽) и фискальный накопитель — готовое решение для кофейни или сферы услуг.',
         },
         marking: {
           title: 'Продуктовый / Маркировка',
@@ -2975,7 +2924,7 @@
         },
         warehouse: {
           title: 'Склад / Инвентаризация',
-          desc: 'Терминал сбора данных iData под ваш бюджет и задачи + интеграция с 1С и настройка обмена документами.',
+          desc: 'Терминал сбора данных iData под ваш бюджет и задачи для быстрой приёмки и инвентаризации.',
         },
       }[key];
 
@@ -2998,13 +2947,6 @@
               </span>
               <span class="font-mono font-semibold text-carbon shrink-0">+4 250 ₽</span>
             </label>
-            <label class="flex items-center justify-between gap-3 p-3.5 rounded-md bg-surface border border-hairline cursor-pointer text-sm">
-              <span class="flex items-center gap-2.5">
-                <input type="checkbox" ${cfg.fns ? 'checked' : ''} onchange="setBundleOpt('retail','fns',this.checked)" class="w-4 h-4 accent-brand rounded shrink-0" />
-                <span class="font-medium text-carbon">Регистрация ККТ в ФНС + подключение ОФД</span>
-              </span>
-              <span class="font-mono font-semibold text-carbon shrink-0">+3 500 ₽</span>
-            </label>
           </div>
         `;
       } else if (key === 'coffee') {
@@ -3017,20 +2959,6 @@
                 <button type="button" onclick="setBundleOpt('coffee','fn','fn-15')" class="min-h-[48px] py-2.5 px-3 text-sm rounded border font-medium transition-colors ${cfg.fn === 'fn-15' ? 'border-carbon bg-carbon text-white' : 'border-hairline bg-surface text-carbon hover:border-carbon'}">ФН-1.2 на 15 мес. — 15 000 ₽</button>
               </div>
             </div>
-            <label class="flex items-center justify-between gap-3 p-3.5 rounded-md bg-surface border border-hairline cursor-pointer text-sm">
-              <span class="flex items-center gap-2.5">
-                <input type="checkbox" ${cfg.sub1c ? 'checked' : ''} onchange="setBundleOpt('coffee','sub1c',this.checked)" class="w-4 h-4 accent-brand rounded shrink-0" />
-                <span class="font-medium text-carbon">Подписка 1С:Розница на ПК для управления торговлей</span>
-              </span>
-              <span class="font-mono text-xs font-semibold text-graphite shrink-0">Подбор тарифа</span>
-            </label>
-            <label class="flex items-center justify-between gap-3 p-3.5 rounded-md bg-surface border border-hairline cursor-pointer text-sm">
-              <span class="flex items-center gap-2.5">
-                <input type="checkbox" ${cfg.fns ? 'checked' : ''} onchange="setBundleOpt('coffee','fns',this.checked)" class="w-4 h-4 accent-brand rounded shrink-0" />
-                <span class="font-medium text-carbon">Регистрация ККТ в ФНС + подключение ОФД</span>
-              </span>
-              <span class="font-mono font-semibold text-carbon shrink-0">+3 500 ₽</span>
-            </label>
           </div>
         `;
       } else if (key === 'marking') {
@@ -3042,13 +2970,6 @@
                 <span class="font-medium text-carbon">Добавить дисплей покупателя POScenter PCP220</span>
               </span>
               <span class="font-mono font-semibold text-carbon shrink-0">+7 400 ₽</span>
-            </label>
-            <label class="flex items-center justify-between gap-3 p-3.5 rounded-md bg-surface border border-hairline cursor-pointer text-sm">
-              <span class="flex items-center gap-2.5">
-                <input type="checkbox" ${cfg.fns ? 'checked' : ''} onchange="setBundleOpt('marking','fns',this.checked)" class="w-4 h-4 accent-brand rounded shrink-0" />
-                <span class="font-medium text-carbon">Настройка Честного ЗНАКа + регистрация ККТ в ФНС</span>
-              </span>
-              <span class="font-mono font-semibold text-carbon shrink-0">+3 500 ₽</span>
             </label>
           </div>
         `;
@@ -3072,13 +2993,6 @@
                 </button>
               </div>
             </div>
-            <label class="flex items-center justify-between gap-3 p-3.5 rounded-md bg-surface border border-hairline cursor-pointer text-sm">
-              <span class="flex items-center gap-2.5">
-                <input type="checkbox" ${cfg.sub1c ? 'checked' : ''} onchange="setBundleOpt('warehouse','sub1c',this.checked)" class="w-4 h-4 accent-brand rounded shrink-0" />
-                <span class="font-medium text-carbon">Интеграция с 1С и настройка обмена данными</span>
-              </span>
-              <span class="font-mono text-xs font-semibold text-graphite shrink-0">Подбор тарифа</span>
-            </label>
           </div>
         `;
       }
@@ -3169,7 +3083,7 @@
         }
       });
       if (fnsIncluded) {
-        document.getElementById('cartSetupToggle').checked = true;
+        const stEl = document.getElementById('cartSetupToggle'); if (stEl) stEl.checked = true;
       }
       renderCart();
       renderCatalog();
@@ -3203,7 +3117,7 @@
 
       document.getElementById('addonFn15').checked = false;
       document.getElementById('addonFn36').checked = false;
-      document.getElementById('addonFns').checked = false;
+      const addonFnsEl = document.getElementById('addonFns'); if (addonFnsEl) addonFnsEl.checked = false;
 
       const addonsBlock = document.getElementById('modalAddonsBlock');
       if (product.supportsFnAddons) {
@@ -3247,7 +3161,7 @@
       if (product.supportsFnAddons) {
         if (document.getElementById('addonFn15').checked) total += 15000;
         if (document.getElementById('addonFn36').checked) total += 20500;
-        if (document.getElementById('addonFns').checked) total += FNS_SETUP_PRICE;
+        if (document.getElementById('addonFns')?.checked) total += FNS_SETUP_PRICE;
       }
       document.getElementById('modalDynamicPrice').textContent = formatPrice(total);
     }
@@ -3268,7 +3182,7 @@
           addons.push('ФН-1.2 36 мес.');
           extraCost += 20500;
         }
-        if (document.getElementById('addonFns').checked) {
+        if (document.getElementById('addonFns')?.checked) {
           addons.push('Регистрация ФНС + ОФД');
           extraCost += FNS_SETUP_PRICE;
         }
@@ -3720,8 +3634,8 @@
 
         document.getElementById('cartOrderNumber').textContent = ref;
         state.cart = [];
-        document.getElementById('cartSetupToggle').checked = false;
-        document.getElementById('cart1cToggle').checked = false;
+        const stEl2 = document.getElementById('cartSetupToggle'); if (stEl2) stEl2.checked = false;
+        const c1El = document.getElementById('cart1cToggle'); if (c1El) c1El.checked = false;
         saveCart();
         document.getElementById('cartCheckoutForm').reset();
         document.getElementById('cartOrderSuccess').classList.remove('hidden');
