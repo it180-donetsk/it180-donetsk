@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>АйТи Сервис — Онлайн-кассы, POS-оборудование, ТСД и 1С в Донецке | it180.ru</title>
-  <meta name="description" content="Онлайн-кассы, POS-терминалы POScenter, АТОЛ Sigma 7, ТСД iData, ФН-1.2 и 2D-сканеры со склада в Донецке (ДНР). Автоматизация торговли и внедрение 1С под ключ.">
+  <meta name="description" content="Онлайн-кассы, POS-терминалы POScenter, АТОЛ Sigma 7, ТСД iData, ФН-1.2 и 2D-сканеры из магазина в Донецке (ДНР). Автоматизация торговли и внедрение 1С под ключ.">
 
   <!-- Google Fonts: Golos Text & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,9 +135,155 @@
     ::-webkit-scrollbar-track { background: #F5F5F3; }
     ::-webkit-scrollbar-thumb { background: #CFCFC8; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #9F9F98; }
+
+    /* ==================== SPLASH SCREEN (ЗАСТАВКА) ==================== */
+    #splashScreen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #141416;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.75s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s ease;
+      will-change: transform;
+    }
+
+    #splashScreen.splash-exit {
+      transform: translateY(-100%);
+      pointer-events: none;
+    }
+
+    .splash-core {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 24px;
+    }
+
+    .splash-logo-wrap {
+      width: 64px;
+      height: 64px;
+      opacity: 0;
+      transform: scale(0.75);
+      animation: splashLogoPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+    }
+
+    .splash-orbit {
+      transform-origin: center;
+      animation: logoOrbitSpin 8s linear infinite;
+    }
+
+    .splash-text-mask {
+      overflow: hidden;
+    }
+
+    .splash-title {
+      color: #FFFFFF;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      transform: translateY(110%);
+      animation: splashSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.28s forwards;
+    }
+
+    .splash-sub {
+      font-family: 'JetBrains Mono', monospace;
+      color: #9A9CA6;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      margin-top: 6px;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: splashFadeUp 0.45s ease 0.48s forwards;
+    }
+
+    .splash-sub span {
+      color: #D71920;
+    }
+
+    .splash-progress-track {
+      width: 220px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 2px;
+      margin-top: 28px;
+      overflow: hidden;
+      opacity: 0;
+      animation: splashFadeIn 0.3s ease 0.35s forwards;
+    }
+
+    .splash-progress-bar {
+      width: 100%;
+      height: 100%;
+      background: #D71920;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: splashFillBar 1.15s cubic-bezier(0.4, 0, 0.2, 1) 0.38s forwards;
+    }
+
+    .splash-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #6B6E78;
+      margin-top: 12px;
+      letter-spacing: 0.08em;
+      opacity: 0;
+      animation: splashFadeIn 0.3s ease 0.45s forwards;
+    }
+
+    @keyframes splashLogoPop {
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes splashSlideUp {
+      to { transform: translateY(0); }
+    }
+    @keyframes splashFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes splashFadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes splashFillBar {
+      0% { transform: scaleX(0); }
+      65% { transform: scaleX(0.78); }
+      100% { transform: scaleX(1); }
+    }
   </style>
 </head>
 <body class="font-sans text-carbon bg-canvas selection:bg-brand selection:text-white" style="">
+
+  <!-- ==================== 0. SPLASH SCREEN (ЗАСТАВКА) ==================== -->
+  <div id="splashScreen" title="Нажмите, чтобы пропустить">
+    <div class="splash-core">
+      <div class="splash-logo-wrap">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="22.5" stroke="#D71920" stroke-opacity="0.45" stroke-width="1.2" stroke-dasharray="10 18 4 18" stroke-linecap="round" class="splash-orbit"></circle>
+          <circle cx="24" cy="24" r="18" fill="#D71920"></circle>
+          <circle cx="17.6" cy="15.8" r="2.15" fill="#FFFFFF"></circle>
+          <rect x="15.7" y="20.2" width="3.8" height="12.2" rx="1" fill="#FFFFFF"></rect>
+          <path d="M26.8 14.5H30.5V20.2H34V23.3H30.5V28.2C30.5 29.2 31.1 29.7 32.1 29.7C32.8 29.7 33.4 29.5 34 29.3V32.3C33.1 32.6 32.2 32.8 31.1 32.8C28.2 32.8 26.8 31.3 26.8 28.4V23.3H24.2V20.2H26.8V14.5Z" fill="#FFFFFF"></path>
+        </svg>
+      </div>
+      <div>
+        <div class="splash-text-mask">
+          <div class="splash-title">АйТи СЕРВИС</div>
+        </div>
+        <div class="splash-sub">ДОНЕЦК <span>·</span> IT180.RU</div>
+      </div>
+    </div>
+    <div class="splash-progress-track">
+      <div class="splash-progress-bar"></div>
+    </div>
+    <div class="splash-status" id="splashStatus">ЗАГРУЗКА КАТАЛОГА ККТ И 1С...</div>
+  </div>
 
   <!-- ==================== 1. TOP UTILITY BAR ==================== -->
   <div class="bg-carbon text-neutral-300 border-b border-neutral-800 text-xs sm:text-[13px]">
@@ -146,7 +292,7 @@
       <div class="flex sm:hidden items-center justify-between w-full gap-2 truncate">
         <span class="inline-flex items-center gap-1.5 text-white font-medium truncate">
           <span class="w-1.5 h-1.5 rounded-full bg-brand shrink-0"></span>
-          <span class="truncate">Донецк, пр-кт Мира, 8 • Склад в наличии</span>
+          <span class="truncate">Донецк, пр-кт Мира, 8 • Магазин</span>
         </span>
       </div>
 
@@ -154,7 +300,7 @@
       <div class="hidden sm:flex flex-wrap items-center gap-x-3 gap-y-1">
         <span class="inline-flex items-center gap-2 text-white font-medium">
           <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
-          Склад онлайн-касс и POS-оборудования в Донецке (ДНР)
+          Магазин онлайн-касс и POS-оборудования в Донецке (ДНР)
         </span>
         <span class="hidden md:inline text-neutral-600">•</span>
         <span class="text-neutral-300">283015, г. Донецк, пр-кт Мира, д. 8</span>
@@ -306,7 +452,7 @@
 
         <!-- Direct Contacts -->
         <div class="pt-4 border-t border-hairline space-y-3">
-          <div class="font-mono text-xs uppercase tracking-wider text-graphite">Связь со складом</div>
+          <div class="font-mono text-xs uppercase tracking-wider text-graphite">Связь с магазином</div>
           <div class="space-y-2">
             <a href="tel:+79495089933" class="flex items-center justify-between min-h-[48px] px-4 rounded-md border border-hairline bg-surface font-mono font-semibold text-carbon">
               <span>+7 (949) 508-99-33</span>
@@ -355,7 +501,7 @@
               </h1>
 
               <p class="text-[15.5px] sm:text-[18px] text-graphite leading-relaxed max-w-2xl mb-7 sm:mb-8">
-                Поставляем онлайн-кассы, POS-терминалы, ТСД, 2D-сканеры и фискальные накопители напрямую со склада в ДНР.
+                Поставляем онлайн-кассы, POS-терминалы, ТСД, 2D-сканеры и фискальные накопители напрямую из магазина в ДНР.
                 Настраиваем 1С, маркировку «Честный ЗНАК», регистрируем ККТ в ФНС и запускаем кассу за 1 день.
               </p>
 
@@ -370,7 +516,7 @@
                 <a href="#bundles" class="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 text-[15px] font-semibold text-carbon bg-surface border border-hairline hover:border-carbon rounded-md transition-colors">
                   Собрать кассу под ключ
                 </a>
-                <button type="button" onclick="openCallbackModal('Подбор оборудования со склада в Донецке')" class="inline-flex items-center justify-center min-h-[48px] px-3 py-3 text-[15px] font-medium text-graphite hover:text-carbon transition-colors">
+                <button type="button" onclick="openCallbackModal('Подбор оборудования в магазине в Донецке')" class="inline-flex items-center justify-center min-h-[48px] px-3 py-3 text-[15px] font-medium text-graphite hover:text-carbon transition-colors">
                   Консультация инженера
                 </button>
               </div>
@@ -380,7 +526,7 @@
             <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-5 sm:pt-6 border-t border-hairline">
               <div>
                 <div class="font-mono text-lg sm:text-2xl font-bold text-carbon">18 поз.</div>
-                <div class="text-xs sm:text-sm text-graphite mt-0.5">Склад в Донецке</div>
+                <div class="text-xs sm:text-sm text-graphite mt-0.5">Магазин в Донецке</div>
               </div>
               <div>
                 <div class="font-mono text-lg sm:text-2xl font-bold text-carbon">ФФД 1.2</div>
@@ -397,7 +543,7 @@
           <div class="lg:col-span-5 bg-carbon text-white rounded-lg p-5 sm:p-7 tech-grid-bg border border-neutral-800 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 border-b border-neutral-800 pb-3.5 mb-5">
-                <span class="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand font-semibold">Хит продаж со склада</span>
+                <span class="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand font-semibold">Хит продаж магазина</span>
                 <span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 shrink-0">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                   В наличии
@@ -462,7 +608,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-hairline border-x border-hairline bg-surface">
           <div class="p-5 sm:p-6">
             <div class="font-mono text-xs text-brand font-semibold mb-1.5">01 / НАЛИЧИЕ</div>
-            <h2 class="font-bold text-[16px] text-carbon mb-1.5">Склад в центре Донецка</h2>
+            <h2 class="font-bold text-[16px] text-carbon mb-1.5">Магазин в центре Донецка</h2>
             <p class="text-sm text-graphite leading-relaxed">Оборудование на пр-кт Мира, 8 — можно забрать сегодня или заказать доставку по ДНР.</p>
           </div>
           <div class="p-5 sm:p-6">
@@ -734,7 +880,7 @@
               
               <div class="inline-flex items-center gap-1.5 text-sm text-stock font-medium mt-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-stock"></span>
-                В наличии на складе в Донецке
+                В наличии в магазине в Донецке
               </div>
             </div>
 
@@ -776,7 +922,7 @@
               </div>
               <h3 class="text-[17px] font-bold text-carbon mb-2">Подбор и поставка ККТ</h3>
               <p class="text-sm text-graphite leading-relaxed mb-4">
-                Подбираем кассу, POS-терминал, сканер и ТСД со склада в Донецке под ваш поток клиентов, СНО и требования 54-ФЗ без переплат.
+                Подбираем кассу, POS-терминал, сканер и ТСД из магазина в Донецке под ваш поток клиентов, СНО и требования 54-ФЗ без переплат.
               </p>
             </div>
             <button type="button" onclick="openCallbackModal('Подбор и поставка ККТ')" class="text-left text-sm font-semibold text-carbon hover:text-brand transition-colors pt-3 border-t border-hairline">
@@ -893,7 +1039,7 @@
           <div class="lg:col-span-6 bg-surface border border-hairline rounded-lg p-5 sm:p-8 flex flex-col justify-between">
             <div>
               <div class="font-mono text-xs uppercase tracking-wider text-brand font-semibold mb-1.5">Контакты и реквизиты</div>
-              <h2 class="text-2xl font-bold tracking-tight text-carbon mb-5">Офис и склад в Донецке</h2>
+              <h2 class="text-2xl font-bold tracking-tight text-carbon mb-5">Офис и магазин в Донецке</h2>
 
               <dl class="divide-y divide-hairline text-sm sm:text-[15px]">
                 <div class="py-3.5 flex flex-col sm:flex-row sm:justify-between gap-1">
@@ -940,7 +1086,7 @@
             <div class="font-mono text-xs uppercase tracking-wider text-brand font-semibold mb-1.5">Быстрая заявка</div>
             <h2 class="text-2xl font-bold tracking-tight mb-2">Запросить счёт или консультацию</h2>
             <p class="text-sm text-neutral-400 mb-6">
-              Оставьте контакты — подготовим коммерческое предложение, проверим остатки на складе в Донецке и сориентируем по запуску.
+              Оставьте контакты — подготовим коммерческое предложение, проверим остатки в магазине в Донецке и сориентируем по запуску.
             </p>
 
             <form id="inlineRequestForm" class="space-y-4" novalidate="">
@@ -1223,7 +1369,7 @@
               <div class="p-3.5 rounded-md bg-canvas border border-hairline space-y-1 text-xs">
                 <div class="flex items-center gap-2 text-stock font-medium">
                   <span class="w-2 h-2 rounded-full bg-stock"></span>
-                  В наличии на складе в Донецке
+                  В наличии в магазине в Донецке
                 </div>
                 <div class="text-graphite">Официальная гарантия · пр-кт Мира, д. 8</div>
               </div>
@@ -1321,7 +1467,7 @@
       <div class="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-hairline bg-canvas flex items-center justify-between shrink-0">
         <div>
           <h3 class="font-bold text-base sm:text-lg text-carbon">Корзина</h3>
-          <p class="text-[11px] font-mono text-graphite">Склад Донецк · пр-кт Мира, д. 8</p>
+          <p class="text-[11px] font-mono text-graphite">Магазин Донецк · пр-кт Мира, д. 8</p>
         </div>
         <button type="button" onclick="closeCartDrawer()" class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] -mr-2 rounded-md text-graphite hover:text-carbon hover:bg-hairline/50 transition-colors" aria-label="Закрыть корзину">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -2983,7 +3129,7 @@
               ${hasCustomTariff ? `<div class="text-xs text-graphite mt-1">+ программное обеспечение 1С по тарифу</div>` : ''}
               <div class="inline-flex items-center gap-1.5 text-sm text-stock font-medium mt-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-stock"></span>
-                В наличии на складе в Донецке
+                В наличии в магазине в Донецке
               </div>
             </div>
 
@@ -3603,4 +3749,29 @@
     });
   </script>
 
+
+  <script>
+    (function () {
+      const splash = document.getElementById('splashScreen');
+      const statusEl = document.getElementById('splashStatus');
+      if (!splash) return;
+
+      let t1, t2;
+      function closeSplash() {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        splash.classList.add('splash-exit');
+        setTimeout(() => {
+          splash.style.display = 'none';
+        }, 800);
+      }
+
+      t1 = setTimeout(() => {
+        if (statusEl) statusEl.textContent = 'ГОТОВО · МАГАЗИН ДОНЕЦК';
+      }, 1150);
+
+      t2 = setTimeout(closeSplash, 1650);
+      splash.addEventListener('click', closeSplash);
+    })();
+  </script>
 </body></html>
