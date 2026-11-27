@@ -40,15 +40,15 @@
 
   <style>
     html {
-      font-size: 16.5px;
+      font-size: 15px;
       overflow-x: hidden;
     }
 
     body {
       background-color: #F6F6F4;
       color: #141416;
-      font-size: 16.5px;
-      line-height: 1.55;
+      font-size: 15px;
+      line-height: 1.5;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -287,7 +287,7 @@
 
   <!-- ==================== 1. TOP UTILITY BAR ==================== -->
   <div class="bg-carbon text-neutral-300 border-b border-neutral-800 text-xs sm:text-[13px]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-2">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-2">
       <!-- Mobile compact single row -->
       <div class="flex sm:hidden items-center justify-between w-full gap-2 truncate">
         <span class="inline-flex items-center gap-1.5 text-white font-medium truncate">
@@ -296,20 +296,20 @@
         </span>
       </div>
 
-      <!-- Tablet & Desktop full utility bar -->
-      <div class="hidden sm:flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span class="inline-flex items-center gap-2 text-white font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
-          Магазин онлайн-касс и POS-оборудования в Донецке (ДНР)
+      <!-- Tablet & Desktop full utility bar (strictly single-line) -->
+      <div class="hidden sm:flex items-center gap-3 whitespace-nowrap overflow-hidden text-xs">
+        <span class="inline-flex items-center gap-1.5 text-white font-medium shrink-0">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand shrink-0"></span>
+          Магазин ККТ и POS в Донецке (ДНР)
         </span>
         <span class="hidden md:inline text-neutral-600">•</span>
-        <span class="text-neutral-300">283015, г. Донецк, пр-кт Мира, д. 8</span>
-        <span class="hidden lg:inline text-neutral-600">•</span>
-        <span class="hidden lg:inline text-neutral-400">Пн–Пт 9:00–18:00</span>
+        <span class="hidden md:inline text-neutral-300 truncate">пр-кт Мира, д. 8</span>
+        <span class="hidden xl:inline text-neutral-600">•</span>
+        <span class="hidden xl:inline text-neutral-400">Пн–Пт 9:00–18:00</span>
       </div>
-      <div class="hidden sm:flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs sm:text-[13px]">
-        <a href="tel:+79495089933" class="text-white hover:text-brand transition-colors">+7 (949) 508-99-33</a>
-        <a href="tel:+79495089955" class="text-neutral-300 hover:text-white transition-colors">+7 (949) 508-99-55</a>
+      <div class="hidden sm:flex items-center gap-3.5 font-mono text-xs whitespace-nowrap shrink-0">
+        <a href="tel:+79495089933" class="text-white hover:text-brand transition-colors font-medium">+7 (949) 508-99-33</a>
+        <a href="tel:+79495089955" class="hidden md:inline text-neutral-300 hover:text-white transition-colors">+7 (949) 508-99-55</a>
         <a href="https://vk.com/itservice180" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors border-l border-neutral-700 pl-3">
           VK @itservice180
         </a>
@@ -319,7 +319,7 @@
 
   <!-- ==================== 2. STICKY MAIN HEADER (STRICTLY ONE CART BUTTON) ==================== -->
   <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur border-b border-hairline">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="py-2.5 sm:py-3 flex items-center justify-between gap-4">
 
         <!-- Animated Brand Logo -->
@@ -475,114 +475,114 @@
   <main id="top">
 
     <!-- ==================== 3. HERO SECTION ==================== -->
-    <section class="border-b border-hairline bg-surface">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-stretch">
+    <section class="bg-canvas">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-9">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
 
           <!-- Left Column: B2B Value Proposition -->
           <div class="lg:col-span-7 flex flex-col justify-between">
             <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-canvas border border-hairline text-xs sm:text-sm font-medium text-graphite mb-5">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-canvas border border-hairline text-xs font-medium text-graphite mb-3.5">
                 <span class="w-2 h-2 rounded-full bg-brand shrink-0"></span>
                 Официальный партнёр POS-Центр · АТОЛ · Контур · 1С
               </div>
 
-              <h1 class="text-[28px] sm:text-4xl lg:text-[46px] font-bold tracking-tight text-carbon leading-[1.14] mb-4 sm:mb-5">
+              <h1 class="text-[26px] sm:text-3xl lg:text-[40px] font-bold tracking-tight text-carbon leading-[1.12] mb-3.5">
                 Торговое оборудование и&nbsp;автоматизация в&nbsp;Донецке под&nbsp;ключ
               </h1>
 
-              <p class="text-[15.5px] sm:text-[18px] text-graphite leading-relaxed max-w-2xl mb-7 sm:mb-8">
-                Поставляем онлайн-кассы, POS-терминалы, ТСД, 2D-сканеры и фискальные накопители напрямую из магазина в ДНР.
-                Настраиваем 1С, маркировку «Честный ЗНАК», регистрируем ККТ в ФНС и запускаем кассу за 1 день.
+              <p class="text-[15px] sm:text-[16.5px] text-graphite leading-relaxed max-w-2xl mb-5">
+                Онлайн-кассы, POS-терминалы, ТСД, 2D-сканеры и ФН-1.2 в наличии в магазине в ДНР.
+                Регистрируем ККТ в ФНС, подключаем «Честный ЗНАК» и запускаем кассу за 1 день.
               </p>
 
-              <!-- Full-width touch buttons on mobile -->
-              <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mb-8 sm:mb-10">
-                <a href="#catalog" class="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 text-[15px] font-semibold text-white bg-brand hover:bg-brand-hover rounded-md transition-colors">
-                  Перейти в каталог
+              <!-- Primary Action Buttons -->
+              <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 mb-6">
+                <a href="#catalog" class="inline-flex items-center justify-center gap-2 min-h-[44px] px-5 py-2.5 text-sm font-semibold text-white bg-brand hover:bg-brand-hover rounded-md transition-colors shadow-sm">
+                  Выбрать оборудование
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M5 12h14m-7-7 7 7-7 7"></path>
                   </svg>
                 </a>
-                <a href="#bundles" class="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 text-[15px] font-semibold text-carbon bg-surface border border-hairline hover:border-carbon rounded-md transition-colors">
-                  Собрать кассу под ключ
+                <a href="#bundles" class="inline-flex items-center justify-center gap-2 min-h-[44px] px-5 py-2.5 text-sm font-semibold text-carbon bg-canvas border border-hairline hover:border-carbon rounded-md transition-colors">
+                  Собрать комплект под ключ
                 </a>
-                <button type="button" onclick="openCallbackModal('Подбор оборудования в магазине в Донецке')" class="inline-flex items-center justify-center min-h-[48px] px-3 py-3 text-[15px] font-medium text-graphite hover:text-carbon transition-colors">
+                <button type="button" onclick="openCallbackModal('Подбор оборудования в магазине в Донецке')" class="inline-flex items-center justify-center min-h-[44px] px-3 py-2 text-sm font-medium text-graphite hover:text-carbon transition-colors">
                   Консультация инженера
                 </button>
               </div>
             </div>
 
             <!-- Technical Facts Strip -->
-            <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-5 sm:pt-6 border-t border-hairline">
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-hairline">
               <div>
-                <div class="font-mono text-lg sm:text-2xl font-bold text-carbon">18 поз.</div>
-                <div class="text-xs sm:text-sm text-graphite mt-0.5">Магазин в Донецке</div>
+                <div class="font-mono text-lg sm:text-xl font-bold text-carbon">18 позиций</div>
+                <div class="text-xs text-graphite mt-0.5">В наличии в Донецке</div>
               </div>
               <div>
-                <div class="font-mono text-lg sm:text-2xl font-bold text-carbon">ФФД 1.2</div>
-                <div class="text-xs sm:text-sm text-graphite mt-0.5">Честный ЗНАК</div>
+                <div class="font-mono text-lg sm:text-xl font-bold text-carbon">ФФД 1.2</div>
+                <div class="text-xs text-graphite mt-0.5">Готово к Честному ЗНАКу</div>
               </div>
               <div>
-                <div class="font-mono text-lg sm:text-2xl font-bold text-carbon">1 день</div>
-                <div class="text-xs sm:text-sm text-graphite mt-0.5">Запуск и ФНС</div>
+                <div class="font-mono text-lg sm:text-xl font-bold text-carbon">За 1 день</div>
+                <div class="text-xs text-graphite mt-0.5">Настройка и ФНС</div>
               </div>
             </div>
           </div>
 
           <!-- Right Column: Hit Sales Bundle Card (Wise Pro + РИТЕЙЛ-КОМБО-01Ф) -->
-          <div class="lg:col-span-5 bg-carbon text-white rounded-lg p-5 sm:p-7 tech-grid-bg border border-neutral-800 flex flex-col justify-between">
+          <div class="lg:col-span-5 bg-carbon text-white rounded-lg p-5 sm:p-6 tech-grid-bg border border-neutral-800 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between gap-2 border-b border-neutral-800 pb-3.5 mb-5">
-                <span class="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-brand font-semibold">Хит продаж магазина</span>
+              <div class="flex items-center justify-between gap-2 border-b border-neutral-800 pb-3 mb-3.5">
+                <span class="font-mono text-[11px] uppercase tracking-wider text-brand font-semibold">Хит продаж магазина</span>
                 <span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 shrink-0">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                   В наличии
                 </span>
               </div>
 
-              <h2 class="text-lg sm:text-xl font-bold text-white leading-snug mb-2">
+              <h2 class="text-lg font-bold text-white leading-snug mb-1.5">
                 Самая популярная кассовая связка
               </h2>
-              <p class="text-sm text-neutral-300 mb-5 leading-relaxed">
-                Оптимальный комплект для розничного магазина: компактный сенсорный моноблок + универсальный ФР с 2×LAN и USB-хабом.
+              <p class="text-[13.5px] text-neutral-300 mb-3.5 leading-relaxed">
+                Компактный сенсорный моноблок + универсальный ФР с 2×LAN и USB-хабом для розницы.
               </p>
 
               <!-- Paired Items Breakdown -->
-              <div class="space-y-2.5 mb-5">
-                <div class="bg-neutral-900/90 border border-neutral-800 rounded-md p-3.5 flex items-center justify-between gap-3">
+              <div class="space-y-2 mb-4">
+                <div class="bg-neutral-900/90 border border-neutral-800 rounded-md px-3.5 py-2.5 flex items-center justify-between gap-3">
                   <div class="min-w-0">
-                    <div class="font-mono text-[11px] text-neutral-400 uppercase">POS-терминал • ХИТ</div>
-                    <button type="button" onclick="openProductModal('wise-pro')" class="text-left text-[15px] font-semibold text-white hover:text-brand transition-colors truncate block w-full">
+                    <div class="font-mono text-[10px] text-neutral-400 uppercase">POS-терминал • ХИТ</div>
+                    <button type="button" onclick="openProductModal('wise-pro')" class="text-left text-sm font-semibold text-white hover:text-brand transition-colors truncate block w-full">
                       POScenter Wise Pro
                     </button>
                   </div>
-                  <div class="font-mono text-base font-bold text-white shrink-0">40 000 ₽</div>
+                  <div class="font-mono text-sm font-bold text-white shrink-0 whitespace-nowrap">40 000 ₽</div>
                 </div>
 
-                <div class="bg-neutral-900/90 border border-neutral-800 rounded-md p-3.5 flex items-center justify-between gap-3">
+                <div class="bg-neutral-900/90 border border-neutral-800 rounded-md px-3.5 py-2.5 flex items-center justify-between gap-3">
                   <div class="min-w-0">
-                    <div class="font-mono text-[11px] text-neutral-400 uppercase">Фискальный регистратор • ХИТ</div>
-                    <button type="button" onclick="openProductModal('retail-combo-01f')" class="text-left text-[15px] font-semibold text-white hover:text-brand transition-colors truncate block w-full">
+                    <div class="font-mono text-[10px] text-neutral-400 uppercase">Фискальный регистратор • ХИТ</div>
+                    <button type="button" onclick="openProductModal('retail-combo-01f')" class="text-left text-sm font-semibold text-white hover:text-brand transition-colors truncate block w-full">
                       РИТЕЙЛ-КОМБО-01Ф (У) 2LAN/HUB
                     </button>
                   </div>
-                  <div class="font-mono text-base font-bold text-white shrink-0">40 000 ₽</div>
+                  <div class="font-mono text-sm font-bold text-white shrink-0 whitespace-nowrap">40 000 ₽</div>
                 </div>
               </div>
             </div>
 
             <!-- Total + Actions -->
-            <div class="pt-4 border-t border-neutral-800">
-              <div class="flex items-baseline justify-between mb-4">
-                <span class="text-sm text-neutral-300">Стоимость связки (без ФН):</span>
-                <span class="font-mono text-2xl font-bold text-white">80 000 ₽</span>
+            <div class="pt-3.5 border-t border-neutral-800">
+              <div class="flex items-baseline justify-between mb-3">
+                <span class="text-xs sm:text-sm text-neutral-300">Стоимость связки (без ФН):</span>
+                <span class="font-mono text-xl sm:text-2xl font-bold text-white whitespace-nowrap">80 000 ₽</span>
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <button type="button" onclick="addHeroHitBundle()" class="min-h-[48px] py-3 px-4 text-sm font-semibold text-white bg-brand hover:bg-brand-hover rounded-md transition-colors text-center">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <button type="button" onclick="addHeroHitBundle()" class="min-h-[44px] py-2.5 px-3 text-sm font-semibold text-white bg-brand hover:bg-brand-hover rounded-md transition-colors text-center whitespace-nowrap">
                   В корзину за 80 000 ₽
                 </button>
-                <a href="#bundles" class="inline-flex items-center justify-center min-h-[48px] py-3 px-4 text-sm font-semibold text-white bg-neutral-900 border border-neutral-700 hover:border-white rounded-md transition-colors text-center">
+                <a href="#bundles" class="inline-flex items-center justify-center min-h-[44px] py-2.5 px-3 text-sm font-semibold text-white bg-neutral-900 border border-neutral-700 hover:border-white rounded-md transition-colors text-center whitespace-nowrap">
                   Добавить ФН и сканер
                 </a>
               </div>
@@ -594,26 +594,26 @@
     </section>
 
     <!-- ==================== 4. ADVANTAGES STRIP ==================== -->
-    <section class="border-b border-hairline bg-canvas">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-hairline border-x border-hairline bg-surface">
-          <div class="p-5 sm:p-6">
-            <div class="font-mono text-xs text-brand font-semibold mb-1.5">01 / НАЛИЧИЕ</div>
+    <section class="pb-4 sm:pb-6 bg-canvas">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-hairline/70 border border-hairline rounded-lg bg-surface overflow-hidden">
+          <div class="p-4 sm:p-5">
+            <div class="font-mono text-[11px] text-brand font-semibold mb-1">01 / НАЛИЧИЕ</div>
             <h2 class="font-bold text-[16px] text-carbon mb-1.5">Магазин в центре Донецка</h2>
             <p class="text-sm text-graphite leading-relaxed">Оборудование на пр-кт Мира, 8 — можно забрать сегодня или заказать доставку по ДНР.</p>
           </div>
-          <div class="p-5 sm:p-6">
-            <div class="font-mono text-xs text-brand font-semibold mb-1.5">02 / ОРИГИНАЛ</div>
+          <div class="p-4 sm:p-5">
+            <div class="font-mono text-[11px] text-brand font-semibold mb-1">02 / ОРИГИНАЛ</div>
             <h2 class="font-bold text-[16px] text-carbon mb-1.5">Официальная поставка</h2>
             <p class="text-sm text-graphite leading-relaxed">Прямое партнёрство с POS-Центр, АТОЛ, Контур и 1С. Актуальные прошивки под ФФД 1.2.</p>
           </div>
-          <div class="p-5 sm:p-6">
-            <div class="font-mono text-xs text-brand font-semibold mb-1.5">03 / ПОД КЛЮЧ</div>
+          <div class="p-4 sm:p-5">
+            <div class="font-mono text-[11px] text-brand font-semibold mb-1">03 / ПОД КЛЮЧ</div>
             <h2 class="font-bold text-[16px] text-carbon mb-1.5">Регистрация в ФНС и ОФД</h2>
             <p class="text-sm text-graphite leading-relaxed">Настроим кассу, подключим 1С и Честный ЗНАК, обучим персонал работе без ошибок.</p>
           </div>
-          <div class="p-5 sm:p-6">
-            <div class="font-mono text-xs text-brand font-semibold mb-1.5">04 / СЕРВИС</div>
+          <div class="p-4 sm:p-5">
+            <div class="font-mono text-[11px] text-brand font-semibold mb-1">04 / СЕРВИС</div>
             <h2 class="font-bold text-[16px] text-carbon mb-1.5">Техподдержка и гарантия</h2>
             <p class="text-sm text-graphite leading-relaxed">Собственный сервисный центр в Донецке. Оперативная помощь, чтобы торговля не останавливалась.</p>
           </div>
@@ -622,8 +622,8 @@
     </section>
 
     <!-- ==================== 5. FULL 18-ITEM INTERACTIVE CATALOG ==================== -->
-    <section id="catalog" class="py-10 sm:py-12 lg:py-16 border-b border-hairline">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="catalog" class="py-7 sm:py-9 lg:py-10 bg-canvas">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Hidden Photo Mode Top Hint (only visible when admin activates photo mode) -->
         <div id="photoModeBanner" class="mb-6 p-4 rounded-lg bg-carbon text-white border border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hidden">
@@ -640,7 +640,7 @@
         <input type="file" id="hiddenPhotoFileInput" accept="image/*" class="hidden">
 
         <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 mb-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-2.5 mb-4">
           <div>
             <div class="font-mono text-xs uppercase tracking-wider text-brand font-semibold mb-1.5">Актуальный прайс-лист</div>
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-carbon">Каталог торгового оборудования</h2>
@@ -651,7 +651,7 @@
         </div>
 
         <!-- Filters Toolbar -->
-        <div class="bg-surface border border-hairline rounded-lg p-3.5 sm:p-5 mb-6 space-y-3.5 sm:space-y-4">
+        <div class="bg-surface border border-hairline rounded-lg p-3 sm:p-4 mb-5 space-y-3">
           <!-- Category Tabs (Horizontal swipe on mobile, no wrapping) -->
           <div class="flex items-center gap-2 overflow-x-auto md:overflow-visible md:flex-wrap no-scrollbar whitespace-nowrap pb-1 -mx-1 px-1" id="categoryTabs">
           <button type="button" data-category="Все" class="cat-tab inline-flex items-center gap-2 min-h-[42px] px-3.5 py-2 text-sm rounded-md transition-colors shrink-0 font-semibold bg-carbon text-white">
@@ -715,7 +715,7 @@
         </div>
 
         <!-- Product Grid: 1 col mobile, 2 cols tablet, 3 cols desktop -->
-        <div id="catalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         </div>
 
         <!-- Empty State -->
@@ -731,8 +731,8 @@
     </section>
 
     <!-- ==================== 6. TURNKEY BUNDLE CONFIGURATOR ==================== -->
-    <section id="bundles" class="py-10 sm:py-12 lg:py-16 bg-surface border-b border-hairline">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="bundles" class="py-7 sm:py-9 lg:py-10 bg-canvas">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="max-w-2xl mb-6 sm:mb-7">
           <div class="font-mono text-xs uppercase tracking-wider text-brand font-semibold mb-1.5">Интерактивный конструктор</div>
@@ -752,24 +752,24 @@
             <div class="font-semibold text-[15px]">Розница (Хит продаж)</div>
           </button>
 
-          <button type="button" data-bundle="coffee" class="bundle-tab shrink-0 w-[240px] lg:w-auto text-left p-4 rounded-lg border transition-all border-hairline bg-canvas text-carbon hover:border-carbon">
+          <button type="button" data-bundle="coffee" class="bundle-tab shrink-0 w-[240px] lg:w-auto text-left p-4 rounded-lg border transition-all border-hairline bg-surface text-carbon hover:border-carbon">
             <div class="font-mono text-[11px] uppercase tracking-wider opacity-75 mb-1">02 / HoReCa</div>
             <div class="font-semibold text-[15px]">Кофейня / Услуги</div>
           </button>
 
-          <button type="button" data-bundle="marking" class="bundle-tab shrink-0 w-[240px] lg:w-auto text-left p-4 rounded-lg border transition-all border-hairline bg-canvas text-carbon hover:border-carbon">
+          <button type="button" data-bundle="marking" class="bundle-tab shrink-0 w-[240px] lg:w-auto text-left p-4 rounded-lg border transition-all border-hairline bg-surface text-carbon hover:border-carbon">
             <div class="font-mono text-[11px] uppercase tracking-wider opacity-75 mb-1">03 / Честный ЗНАК</div>
             <div class="font-semibold text-[15px]">Продуктовый / Маркировка</div>
           </button>
 
-          <button type="button" data-bundle="warehouse" class="bundle-tab shrink-0 w-[240px] lg:w-auto text-left p-4 rounded-lg border transition-all border-hairline bg-canvas text-carbon hover:border-carbon">
+          <button type="button" data-bundle="warehouse" class="bundle-tab shrink-0 w-[240px] lg:w-auto text-left p-4 rounded-lg border transition-all border-hairline bg-surface text-carbon hover:border-carbon">
             <div class="font-mono text-[11px] uppercase tracking-wider opacity-75 mb-1">04 / Логистика</div>
             <div class="font-semibold text-[15px]">Склад / Инвентаризация</div>
           </button>
         </div>
 
         <!-- Interactive Bundle Configurator Panel -->
-        <div id="bundleConfigurator" class="bg-canvas border border-hairline rounded-lg p-4 sm:p-7">
+        <div id="bundleConfigurator" class="bg-surface border border-hairline rounded-lg p-4 sm:p-7">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-7 items-start">
           <div class="lg:col-span-8 space-y-5">
             <div>
@@ -885,8 +885,8 @@
     </section>
 
     <!-- ==================== 7. FULL CYCLE AUTOMATION SERVICES ==================== -->
-    <section id="services" class="py-10 sm:py-12 lg:py-16 border-b border-hairline">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" class="py-7 sm:py-9 lg:py-10 bg-canvas">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div class="max-w-2xl">
@@ -952,8 +952,9 @@
     </section>
 
     <!-- ==================== 8. ABOUT COMPANY & OFFICIAL PARTNERS ==================== -->
-    <section id="about" class="py-10 sm:py-12 lg:py-16 bg-surface border-b border-hairline">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-7 sm:py-9 lg:py-10 bg-canvas">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-surface border border-hairline rounded-lg p-6 sm:p-8">
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-10">
           <div class="lg:col-span-5">
@@ -994,13 +995,14 @@
             </div>
           </div>
         </div>
+        </div>
 
       </div>
     </section>
 
     <!-- ==================== 9. CONTACTS & REQUEST FORM ==================== -->
-    <section id="contacts" class="py-10 sm:py-12 lg:py-16 bg-canvas">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contacts" class="py-7 sm:py-9 lg:py-10 bg-canvas">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
 
@@ -1117,7 +1119,7 @@
 
   <!-- ==================== FOOTER WITH ANIMATED LOGO ==================== -->
   <footer class="bg-surface border-t border-hairline py-8 text-sm text-graphite">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
       <a href="#top" class="brand-logo-group flex items-center gap-3">
         <div class="brand-logo-mark w-9 h-9">
           <svg class="w-9 h-9 overflow-visible" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1144,7 +1146,7 @@
 
   <!-- ==================== FLOATING ADMIN BAR (PHOTO MODE ONLY) ==================== -->
   <div id="photoAdminBar" class="fixed bottom-0 inset-x-0 z-40 bg-carbon/95 backdrop-blur text-white border-t border-neutral-800 shadow-2xl hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
       <div class="flex items-center gap-3 text-sm">
         <span class="w-2.5 h-2.5 rounded-full bg-brand shrink-0"></span>
         <span>Загружено <strong id="photoAdminCount" class="font-mono text-white">15</strong> из 18 фото</span>
@@ -1412,7 +1414,7 @@
             <div class="text-xs text-graphite font-mono">Итого:</div>
             <div id="modalDynamicPrice" class="font-mono text-xl sm:text-[26px] font-bold text-carbon leading-tight">40&nbsp;000 ₽</div>
           </div>
-          <button type="button" onclick="addModalProductToCart()" class="min-h-[48px] px-5 sm:px-6 py-3 text-[15px] font-semibold text-[#18181B] bg-[#ECECE9] hover:bg-[#E0E0DB] border border-[#D8D8D3] rounded-md transition-colors">
+          <button type="button" onclick="addModalProductToCart()" class="min-h-[46px] px-6 py-2.5 text-sm sm:text-[15px] font-semibold text-white bg-brand hover:bg-brand-hover rounded-md transition-colors shadow-sm whitespace-nowrap">
             Добавить в корзину
           </button>
         </div>
@@ -2699,21 +2701,21 @@
             }">${product.badge}</span>`
           : '';
 
-        // Calm neutral grey button (#ECECE9 / #18181B / border #D8D8D3) -> calm grey stepper
+        // Eye-catching high-contrast buy button / active stepper
         const actionHtml = qtyInCart > 0
           ? `
-            <div class="inline-flex items-center min-h-[48px] bg-[#ECECE9] border border-[#D8D8D3] rounded-md overflow-hidden">
+            <div class="flex-1 inline-flex items-center justify-between h-[42px] bg-carbon text-white rounded-md overflow-hidden">
               <button
                 type="button"
                 onclick="updateCartQty('${baseKey}', -1)"
-                class="min-h-[46px] px-4 text-base font-mono font-bold text-[#18181B] hover:bg-[#E0E0DB] transition-colors"
+                class="h-full px-3.5 text-base font-mono font-bold text-white hover:bg-neutral-800 transition-colors"
                 aria-label="Уменьшить количество"
               >−</button>
-              <span class="px-3.5 text-sm font-mono font-bold text-[#18181B] min-w-[34px] text-center">${qtyInCart}</span>
+              <span class="px-2 text-sm font-mono font-bold text-white text-center">${qtyInCart} шт.</span>
               <button
                 type="button"
                 onclick="updateCartQty('${baseKey}', 1)"
-                class="min-h-[46px] px-4 text-base font-mono font-bold text-[#18181B] hover:bg-[#E0E0DB] transition-colors"
+                class="h-full px-3.5 text-base font-mono font-bold text-white hover:bg-neutral-800 transition-colors"
                 aria-label="Увеличить количество"
               >+</button>
             </div>
@@ -2722,9 +2724,14 @@
             <button
               type="button"
               onclick="addProductToCart('${product.id}')"
-              class="min-h-[48px] px-4 py-2.5 text-sm font-semibold text-[#18181B] bg-[#ECECE9] hover:bg-[#E0E0DB] border border-[#D8D8D3] rounded-md transition-colors"
+              class="flex-1 inline-flex items-center justify-center gap-1.5 h-[42px] px-3 text-sm font-semibold text-white bg-brand hover:bg-brand-hover rounded-md transition-colors whitespace-nowrap shadow-sm"
             >
-              Добавить в корзину
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>В корзину</span>
             </button>
           `;
 
@@ -2757,58 +2764,62 @@
             ondragover="handleCardDragOver(event, this)"
             ondragleave="handleCardDragLeave(this)"
             ondrop="handleCardDrop(event, this, '${product.id}')"
-            class="bg-surface border ${qtyInCart > 0 ? 'border-carbon/50 shadow-sm' : 'border-hairline hover:border-neutral-400'} rounded-lg flex flex-col justify-between transition-all group overflow-hidden"
+            class="bg-surface border ${qtyInCart > 0 ? 'border-carbon shadow-md' : 'border-hairline hover:border-neutral-400 hover:shadow-sm'} rounded-lg flex flex-col justify-between transition-all group overflow-hidden h-full"
           >
-            <div>
+            <div class="flex flex-col flex-1">
               <!-- Top Studio Photo Frame -->
-              <div onclick="${state.photoMode ? `triggerPhotoUpload('${product.id}')` : `openProductModal('${product.id}')`}" class="relative cursor-pointer border-b border-hairline">
-                <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5">
-                  <span class="font-mono text-[11px] font-medium px-2 py-0.5 rounded bg-canvas/95 border border-hairline text-graphite">${product.brand}</span>
+              <div onclick="${state.photoMode ? `triggerPhotoUpload('${product.id}')` : `openProductModal('${product.id}')`}" class="relative cursor-pointer border-b border-hairline bg-white">
+                <div class="absolute top-2.5 left-2.5 right-2.5 z-10 flex items-center justify-between gap-1.5 pointer-events-none">
+                  <span class="font-mono text-[10.5px] font-medium px-2 py-0.5 rounded bg-canvas/95 border border-hairline text-graphite">${product.brand}</span>
                   ${badgeHtml}
                 </div>
-                ${renderProductMedia(product, 'h-52')}
+                ${renderProductMedia(product, 'h-44')}
               </div>
 
               ${photoControlsHtml}
 
               <!-- Info -->
-              <div class="p-5 pb-4">
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="inline-flex items-center gap-1.5 text-xs font-medium text-stock">
+              <div class="p-4 flex flex-col flex-1">
+                <div class="flex items-center justify-between gap-2 mb-1.5">
+                  <span class="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-stock">
                     <span class="w-1.5 h-1.5 rounded-full bg-stock"></span>
                     В наличии
                   </span>
-                  <span class="font-mono text-xs text-graphite">${product.sku}</span>
+                  <span class="font-mono text-[11px] text-graphite truncate">${product.sku}</span>
                 </div>
 
                 <h3
                   onclick="openProductModal('${product.id}')"
-                  class="font-bold text-[19px] sm:text-[20px] text-[#141416] leading-snug mb-2.5 cursor-pointer group-hover:text-brand transition-colors"
+                  class="font-bold text-[16px] text-[#141416] leading-snug mb-1.5 cursor-pointer group-hover:text-brand transition-colors line-clamp-2 min-h-[2.6em]"
+                  title="${product.name}"
                 >
                   ${product.name}
                 </h3>
 
-                <p class="font-mono text-[13px] text-graphite leading-relaxed">
+                <p class="text-[12.5px] text-graphite leading-snug line-clamp-2 mt-auto">
                   ${product.shortSpec}
                 </p>
               </div>
             </div>
 
-            <!-- Footer -->
-            <div class="px-5 py-4 mt-1 border-t border-hairline bg-canvas/40 flex flex-wrap items-center justify-between gap-3">
-              <div class="font-mono text-[22px] sm:text-[24px] font-bold text-[#141416] tracking-tight">
-                ${formatPrice(product.price)}
+            <!-- Compact, Razor-Aligned Buy Footer -->
+            <div class="px-4 py-3.5 border-t border-hairline bg-canvas/50 space-y-2.5">
+              <div class="flex items-baseline justify-between gap-2">
+                <div class="font-mono text-[21px] font-bold text-[#141416] tracking-tight whitespace-nowrap leading-none">
+                  ${formatPrice(product.price)}
+                </div>
+                <span class="text-[11px] font-mono text-graphite">Донецк</span>
               </div>
               <div class="flex items-center gap-2">
+                ${actionHtml}
                 <button
                   type="button"
                   onclick="openProductModal('${product.id}')"
-                  class="min-h-[48px] px-3.5 py-2.5 text-sm font-medium text-graphite hover:text-carbon border border-hairline bg-surface rounded-md transition-colors"
+                  class="h-[42px] px-3 text-xs font-semibold text-graphite hover:text-carbon hover:border-carbon border border-hairline bg-surface rounded-md transition-colors shrink-0 whitespace-nowrap"
                   title="Подробные характеристики"
                 >
                   Инфо
                 </button>
-                ${actionHtml}
               </div>
             </div>
           </article>
@@ -2896,7 +2907,7 @@
         btn.className = `bundle-tab shrink-0 w-[240px] lg:w-auto text-left p-4 rounded-lg border transition-all ${
           active
             ? 'border-carbon bg-carbon text-white shadow-sm'
-            : 'border-hairline bg-canvas text-carbon hover:border-carbon'
+            : 'border-hairline bg-surface text-carbon hover:border-carbon'
         }`;
       });
 
