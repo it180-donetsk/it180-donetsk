@@ -320,11 +320,11 @@
   <!-- ==================== 2. STICKY MAIN HEADER (STRICTLY ONE CART BUTTON) ==================== -->
   <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur border-b border-hairline">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="py-2.5 sm:py-3 flex items-center justify-between gap-3">
+      <div class="py-2.5 sm:py-3 flex items-center justify-between gap-4">
 
         <!-- Animated Brand Logo -->
         <a href="#top" class="brand-logo-group flex items-center gap-2.5 sm:gap-3 shrink-0 focus:outline-none">
-          <div class="brand-logo-mark w-10 h-10 sm:w-11 sm:h-11">
+          <div class="brand-logo-mark w-10 h-10 sm:w-11 sm:h-11 shrink-0">
             <svg class="w-10 h-10 sm:w-11 sm:h-11 overflow-visible" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
                 <clipPath id="headerLogoClip">
@@ -347,51 +347,42 @@
               <path d="M26.8 14.5H30.5V20.2H34V23.3H30.5V28.2C30.5 29.2 31.1 29.7 32.1 29.7C32.8 29.7 33.4 29.5 34 29.3V32.3C33.1 32.6 32.2 32.8 31.1 32.8C28.2 32.8 26.8 31.3 26.8 28.4V23.3H24.2V20.2H26.8V14.5Z" fill="#FFFFFF"></path>
             </svg>
           </div>
-          <div class="brand-logo-wordmark leading-none">
+          <div class="brand-logo-wordmark leading-none whitespace-nowrap">
             <div class="font-bold text-base sm:text-lg tracking-tight text-carbon">СЕРВИС</div>
             <div class="font-mono text-[9.5px] sm:text-[10px] tracking-[0.14em] text-graphite mt-0.5">ДОНЕЦК · IT180.RU</div>
           </div>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden xl:flex items-center gap-6 text-[15px] font-medium text-graphite" aria-label="Основная навигация">
-          <a href="#catalog" class="hover:text-carbon transition-colors">Каталог</a>
-          <a href="#bundles" class="hover:text-carbon transition-colors">Комплекты под ключ</a>
-          <a href="#services" class="hover:text-carbon transition-colors">Услуги и 1С</a>
-          <a href="#about" class="hover:text-carbon transition-colors">О компании</a>
-          <a href="#contacts" class="hover:text-carbon transition-colors">Контакты</a>
+        <!-- Desktop Navigation (strictly single-line, balanced spacing) -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[15px] font-medium text-graphite whitespace-nowrap" aria-label="Основная навигация">
+          <a href="#catalog" class="hover:text-carbon transition-colors py-1">Каталог</a>
+          <a href="#bundles" class="hover:text-carbon transition-colors py-1">Комплекты под ключ</a>
+          <a href="#services" class="hover:text-carbon transition-colors py-1">Услуги</a>
+          <a href="#about" class="hover:text-carbon transition-colors py-1">О компании</a>
+          <a href="#contacts" class="hover:text-carbon transition-colors py-1">Контакты</a>
         </nav>
 
-        <!-- Right Controls: Search (md+) + Callback (lg+) + SINGLE Adaptive Cart + Burger (xl:hidden) -->
-        <div class="flex items-center gap-2 sm:gap-2.5">
-          <!-- Header Search (Tablet/Desktop) -->
-          <div class="hidden md:flex items-center relative">
-            <svg class="w-4 h-4 text-graphite absolute left-3 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </svg>
-            <input id="headerSearchInput" type="search" placeholder="Wise Pro, ФН, Sigma 7..." class="w-44 lg:w-52 pl-9 pr-3 py-2 text-sm bg-canvas border border-hairline rounded-md focus:outline-none focus:border-carbon transition-colors placeholder:text-graphite/70">
-          </div>
-
+        <!-- Right Controls: Callback + SINGLE Adaptive Cart + Burger (lg:hidden) -->
+        <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
           <!-- Callback Button (Desktop) -->
-          <button type="button" onclick="openCallbackModal()" class="hidden lg:inline-flex items-center justify-center px-3.5 py-2.5 text-sm font-medium text-carbon bg-surface border border-hairline rounded-md hover:border-carbon transition-colors">
+          <button type="button" onclick="openCallbackModal()" class="hidden md:inline-flex items-center justify-center min-h-[44px] px-4 py-2 text-sm font-medium text-carbon bg-surface border border-hairline rounded-md hover:border-carbon transition-colors whitespace-nowrap shrink-0">
             Заказать звонок
           </button>
 
-          <!-- SINGLE ADAPTIVE CART BUTTON (Icon + Badge on mobile <=768px; Full label + Total + Badge on desktop) -->
-          <button type="button" onclick="openCartDrawer()" class="relative inline-flex items-center justify-center gap-2 min-h-[44px] min-w-[44px] px-3 md:px-4 py-2 text-sm font-semibold text-white bg-carbon hover:bg-neutral-800 rounded-md transition-colors shadow-sm" aria-label="Открыть корзину">
-            <svg class="w-5 h-5 md:w-4 md:h-4 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <!-- SINGLE ADAPTIVE CART BUTTON -->
+          <button type="button" onclick="openCartDrawer()" class="relative inline-flex items-center justify-center gap-2 min-h-[44px] min-w-[44px] px-3 sm:px-4 py-2 text-sm font-semibold text-white bg-carbon hover:bg-neutral-800 rounded-md transition-colors shadow-sm whitespace-nowrap shrink-0" aria-label="Открыть корзину">
+            <svg class="w-5 h-5 sm:w-4 sm:h-4 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="9" cy="21" r="1"></circle>
               <circle cx="20" cy="21" r="1"></circle>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
-            <span class="hidden md:inline">Корзина</span>
-            <span id="headerCartTotal" class="hidden lg:inline font-mono text-neutral-300 border-l border-neutral-700 pl-2.5">0 ₽</span>
-            <span id="headerCartCount" class="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 rounded bg-brand text-white font-mono text-xs font-bold">0</span>
+            <span class="hidden sm:inline">Корзина</span>
+            <span id="headerCartTotal" class="hidden md:inline font-mono text-neutral-300 border-l border-neutral-700 pl-2.5 whitespace-nowrap">0 ₽</span>
+            <span id="headerCartCount" class="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 rounded bg-brand text-white font-mono text-xs font-bold shrink-0">0</span>
           </button>
 
           <!-- Mobile / Tablet Menu Toggle -->
-          <button type="button" onclick="openMobileDrawer()" class="xl:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-md border border-hairline text-carbon bg-surface hover:bg-canvas transition-colors" aria-label="Открыть меню навигации">
+          <button type="button" onclick="openMobileDrawer()" class="lg:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-md border border-hairline text-carbon bg-surface hover:bg-canvas transition-colors shrink-0" aria-label="Открыть меню навигации">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -402,7 +393,7 @@
   </header>
 
   <!-- ==================== SLIDE-OVER MOBILE MENU DRAWER ==================== -->
-  <div id="mobileDrawer" class="hidden fixed inset-0 z-50 xl:hidden" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+  <div id="mobileDrawer" class="hidden fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Мобильное меню">
     <div class="fixed inset-0 bg-carbon/60 backdrop-blur-[2px]" onclick="closeMobileDrawer()"></div>
     <div class="fixed inset-y-0 right-0 w-full max-w-sm bg-surface border-l border-hairline shadow-2xl flex flex-col">
       <!-- Fixed Drawer Header -->
@@ -440,7 +431,7 @@
             <span class="font-mono text-xs text-brand">ХИТ</span>
           </a>
           <a href="#services" onclick="closeMobileDrawer()" class="flex items-center justify-between min-h-[48px] px-4 rounded-md bg-canvas text-carbon font-semibold text-base hover:bg-hairline/60 transition-colors">
-            <span>Услуги и 1С</span>
+            <span>Услуги</span>
           </a>
           <a href="#about" onclick="closeMobileDrawer()" class="flex items-center justify-between min-h-[48px] px-4 rounded-md bg-canvas text-carbon font-semibold text-base hover:bg-hairline/60 transition-colors">
             <span>О компании</span>
@@ -2831,7 +2822,7 @@
       state.search = '';
       state.sort = 'popular';
       document.getElementById('catalogSearchInput').value = '';
-      document.getElementById('headerSearchInput').value = '';
+      const hdrSearch = document.getElementById('headerSearchInput'); if (hdrSearch) hdrSearch.value = '';
       document.getElementById('mobileSearchInput').value = '';
       document.getElementById('catalogSortSelect').value = 'popular';
       updateFilterUI();
@@ -3505,7 +3496,7 @@
         el.addEventListener('input', (e) => {
           state.search = e.target.value;
           if (id !== 'catalogSearchInput') document.getElementById('catalogSearchInput').value = e.target.value;
-          if (id !== 'headerSearchInput') document.getElementById('headerSearchInput').value = e.target.value;
+          if (id !== 'headerSearchInput' && document.getElementById('headerSearchInput')) document.getElementById('headerSearchInput').value = e.target.value;
           if (id !== 'mobileSearchInput') document.getElementById('mobileSearchInput').value = e.target.value;
           renderCatalog();
         });
